@@ -1,2 +1,13 @@
 test success
 test success
+/Users/冠林己/Desktop/test_data/sample
+/Users/冠林己/Desktop/test_data/sample
+/Users/冠林己/Desktop/test_data/sample
+/Users/冠林己/Desktop/test_data/sample
+.git
+GG
+ruiSuGHJf6Q_005729
+zRZ9PJguIfE_002271
+ruiSuGHJf6Q_005729
+sum
+zRZ9PJguIfE_002271

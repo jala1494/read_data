@@ -11,7 +11,7 @@ def rename_images(folder_path, new_prefix,i):
             continue
 
         # Change the image name
-        new_name = f"{new_prefix}_{i}.jpg"
+        new_name = f"{filename}_{folder_path}.jpg"
         image_path = os.path.join(folder_path, filename)
         new_image_path = os.path.join(folder_path, new_name)
         i=i+1
@@ -23,6 +23,6 @@ def rename_images(folder_path, new_prefix,i):
 
 # Example usage
 i=100
-folder_path = "sample\zRZ9PJguIfE_001741"  # Replace with your folder path
+folder_path = "ruiSuGHJf6Q_005729"  # Replace with your folder path
 new_prefix = "new_image"  # Replace with your desired prefix
 rename_images(folder_path, new_prefix,i)
