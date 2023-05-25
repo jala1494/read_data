@@ -1,4 +1,5 @@
 import os
+import shutil
 def rename_images(folder_path, new_prefix,i):
     # Get a list of all files in the folder
     file_list = os.listdir(folder_path)
@@ -26,8 +27,6 @@ def rename_images(folder_path, new_prefix,i):
 # new_prefix = "new_image"  # Replace with your desired prefix
 # rename_images(folder_path, new_prefix,i)
 
-
-
 def rename_folder(old_folder_path, new_folder_name):
     # Get the parent directory of the old folder
     parent_directory = os.path.dirname(old_folder_path)
@@ -53,16 +52,31 @@ def write_folder_names_to_memo(item, memo_file):
         # Iterate over each item
         f.write(item + "\n")
 
-folder_sequence = 0
-print(str(folder_sequence).zfill(4))
+
 image_sequence = 0
 print(str(image_sequence).zfill(6))
-print(folder_sequence)
+
 directory = "/Users/박주성/Desktop/test_data/sample/GG"  # Replace with the directory path
 memo_file = "/Users/박주성/Desktop/test_data/sample/GG/test.txt"  # Replace with the path to the memo file
+target_folder="/Users/박주성/Desktop/test_data/sample/GG/sum_image"  # Replace with the directory path
+
 items = os.listdir(directory)
 for item in items:
     item_path = os.path.join(directory, item)
     if os.path.isdir(item_path):
-        print(item)
-        write_folder_names_to_memo(item, memo_file)
+        if item_path=="sum_image":
+            continue
+        # print(item)
+        # write_folder_names_to_memo(item, memo_file)
+        file_list = os.listdir(item_path)
+        for file_name in file_list:
+            if not file_name.endswith(('.jpg', '.jpeg', '.png')):
+                continue
+            image_sequence = image_sequence + 1
+            new_name = str(image_sequence).zfill(6) + ".jpg"
+            image_path = os.path.join(item_path, file_name)
+            new_image_path = os.path.join(item_path, new_name)
+            os.rename(image_path, new_image_path)
+            print(f"Renamed {file_name} to {new_name}")
+            shutil.move(new_image_path, target_folder)
+
