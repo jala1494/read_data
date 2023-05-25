@@ -54,7 +54,9 @@ def write_folder_names_to_memo(item, memo_file):
         f.write(item + "\n")
 
 folder_sequence = 0
+print(str(folder_sequence).zfill(4))
 image_sequence = 0
+print(str(image_sequence).zfill(6))
 print(folder_sequence)
 directory = "/Users/박주성/Desktop/test_data/sample/GG"  # Replace with the directory path
 memo_file = "/Users/박주성/Desktop/test_data/sample/GG/test.txt"  # Replace with the path to the memo file
